@@ -1,5 +1,26 @@
 import styled, { css } from "styled-components";
 
+
+const Button = styled.button`
+  border:none;
+  border-radius:var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+  &:hover{
+    background-color:var(--color-brand-700)
+  }
+
+  ${props => sizes[props.size]}
+  ${props => variations[props.variation]}
+`
+
+Button.defaultProps = {
+  variation:'primary',
+  size:'medium'
+}
+
+export default Button;
+
+
 const sizes = {
   small: css`
     font-size: 1.2rem;
